@@ -2,12 +2,12 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Table, Button, Modal, ModalHeader, ModalBody, FormGroup,ModalFooter } from "reactstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteRegistro } from "../features/registros/registrosSlice";
+import { editRegistro,deleteRegistro } from "../features/registros/registrosSlice";
 
 
 function Detalle() {
     const registros = useSelector((state) => state.registros);
-    const [registro, setRegistro] = React.useState();
+    const [registro, setRegistro] = React.useState({id: "", nombre: "", apellido: ""});
     const [actualizar, setActualizar] = React.useState(false);
     const dispatch = useDispatch();
 
@@ -19,14 +19,26 @@ function Detalle() {
         }
     };
 
+    const handleChange = (e) => {
+        setRegistro({
+          ...registro,
+          [e.target.name]: e.target.value,
+        });
+      };
+
     const actualizarShowHide = (dato) => {
         setActualizar(!actualizar);
         console.log(dato);
 
         if(dato){
-            setRegistro({id: dato.id});
+            setRegistro({id: dato.id, nombre: dato.nombre, apellido: dato.apellido});
         }
     };
+
+    const editar = () => {
+        dispatch(editRegistro({ ...registro, id: registro.id }));
+        setActualizar(!actualizar);
+    }
 
     return (
         <>
@@ -68,23 +80,23 @@ function Detalle() {
                 <ModalBody>
                     <FormGroup>
                         <label>Id:</label>
-                        <input className="form-control" readOnly type="text" />
+                        <input className="form-control" readOnly type="text" onChange={handleChange} value={registro.id}/>
                     </FormGroup>
 
                     <FormGroup>
                         <label>Nombre: </label>
-                        <input className="form-control" name="nombre" type="text" />
+                        <input className="form-control" name="nombre" type="text" onChange={handleChange} value={registro.nombre}/>
                     </FormGroup>
 
                     <FormGroup>
                         <label>Apellido:</label>
-                        <input className="form-control" name="apellido" type="text" />
+                        <input className="form-control" name="apellido" type="text" onChange={handleChange} value={registro.apellido}/>
                     </FormGroup>
                 </ModalBody>
 
                 <ModalFooter>
-                        <Button color="primary" >Editar</Button>
-                        <Button color="danger" onClick={actualizarShowHide}>Cancelar</Button>
+                        <Button color="primary" onClick={() => editar()} >Editar</Button>
+                        <Button color="danger" onClick={() => actualizarShowHide(null)}>Cancelar</Button>
                 </ModalFooter>
             </Modal>
 
