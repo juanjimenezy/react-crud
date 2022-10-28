@@ -1,17 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table, Button, Container, Modal,  ModalHeader,  ModalBody,  FormGroup,  ModalFooter } from "reactstrap";
+import { useSelector } from "react-redux";
 
- const data = [
-     { id: 1, nombre: "Juan", apellido: "Jimenez" },
-     { id: 2, nombre: "Benjamin", apellido: "Nieto" },
-     { id: 3, nombre: "Jhonatan", apellido: "Facete" },
-     { id: 4, nombre: "Roiner", apellido: "Escobar" },
-     { id: 5, nombre: "Jose", apellido: "Rodriguez" }
- ];
+const data = [
+
+  ];
 
 class Detalle extends React.Component {
-
+    
+    
     state = {
         data: data,
         modalActualizar: false,
@@ -22,6 +20,14 @@ class Detalle extends React.Component {
             apellido: "",
         }
     }
+
+    DummyView = () => {
+        const reducer = useSelector(state => state.registros);
+        console.log(reducer[0])
+
+
+    }
+
 
     handleChange = (e) => {
         this.setState({
@@ -72,8 +78,10 @@ class Detalle extends React.Component {
     };
 
     render() {
+
         return (
             <>
+                <this.DummyView/>
                 <div className='my-2 text-center'>
                     <Container>
                         <div className='my-5 text-center'>

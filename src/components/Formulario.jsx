@@ -9,7 +9,6 @@ export const Formulario = () => {
             <NuevoRegistro/>
             <Detalle/>
         </div>
-
     )
 }
 
