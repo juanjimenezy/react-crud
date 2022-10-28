@@ -26,6 +26,7 @@ function NuevoRegistro() {
     const fInsertar = () => {
         console.log("insertar:");
         console.log(registro.nombre)
+        
         if(!registro.nombre){
             window.alert('Campo nombre vacio.')
             return;
@@ -54,7 +55,7 @@ function NuevoRegistro() {
             <div>
                 <Modal isOpen={insertar}>
                         <ModalHeader>
-                            <div><h3>Insertar Personaje</h3></div>
+                            <div><h3>Insertar Registro</h3></div>
                         </ModalHeader>
                         <ModalBody>
                             <FormGroup>
