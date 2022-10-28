@@ -10,8 +10,11 @@ function Detalle() {
     const dispatch = useDispatch();
 
     const handleDelete = (id) => {
-        dispatch(deleteRegistro(id));
-        console.log('eliminar' + id);
+        var opcion = window.confirm("Estás Seguro que deseas Eliminar el elemento " + id);
+        if (opcion === true) {
+            dispatch(deleteRegistro(id));
+            console.log('eliminar' + id);
+        }
     };
 
     return (
