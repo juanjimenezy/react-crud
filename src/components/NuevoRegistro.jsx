@@ -1,79 +1,70 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter, } from "reactstrap";
+import {useDispatch } from "react-redux";
+import {Button, Container, Modal, ModalHeader, ModalBody, FormGroup, ModalFooter} from "reactstrap";
+import { addRegistro } from "../features/registros/registrosSlice";
+import { v4 as uuid } from "uuid";
 
-class NuevoRegistro extends React.Component {
+function NuevoRegistro() {
 
-    state = {
-        modalInsertar: false,
-        form: {
-            nombre: "",
-            apellido: "",
-        }
+    const [registro, setRegistro] = React.useState({id: "", nombre: "", apellido: ""});
+    const [insertar, setInsertar] = React.useState(false);
+    const dispatch = useDispatch();
+
+    const handleChange = (e) => {
+        setRegistro({
+          ...registro,
+          [e.target.name]: e.target.value,
+        });
+      };
+
+    const insertarShowHide = () => {
+        setInsertar(!insertar);
+
+    };
+
+    const fInsertar = (dato) => {
+        dispatch(addRegistro({ ...registro, id: uuid() }));
+        setInsertar(!insertar);
     }
 
-    mostrarModalInsertar = () => {
-        this.setState({
-            modalInsertar: true,
-        });
-    };
+    return (
+        <>
+            <div>
+                <Container>
+                    <div className='my-2 text-center'>
+                        <Button color='success' onClick={() => insertarShowHide()}>nuevo</Button>
+                    </div>
+                </Container>
+            </div>
 
-    cerrarModalInsertar = () => {
-        this.setState({ modalInsertar: false });
-    };
+            <div>
+                <Modal isOpen={insertar}>
+                    <ModalHeader>
+                        <div><h3>Insertar Personaje</h3></div>
+                    </ModalHeader>
 
-    handleChange = (e) => {
-        this.setState({
-            form: {
-                ...this.state.form,
-                [e.target.name]: e.target.value,
-            },
-        });
-    };
+                    <ModalBody>
+                        <FormGroup>
+                            <label>Nombre:</label>
+                            <input className="form-control" name="nombre" type="text" onChange={handleChange} value={registro.nombre}/>
+                        </FormGroup>
 
-    render() {
-        return (
-            <>
-                <div>
-                    <Container>
-                        <div className='my-2 text-center'>
-                            <Button color='success' onClick={() => this.mostrarModalInsertar()}>nuevo</Button>
-                        </div>
-                    </Container>
-                </div>
+                        <FormGroup>
+                            <label>Apellido:</label>
+                            <input className="form-control" name="apellido" type="text" onChange={handleChange} value={registro.apellido}/>
+                        </FormGroup>
 
-                <div>
-                    <Modal isOpen={this.state.modalInsertar}>
-                        <ModalHeader>
-                            <div><h3>Insertar Personaje</h3></div>
-                        </ModalHeader>
+                    </ModalBody>
 
-                        <ModalBody>
-                            {/* <FormGroup>
-                                <label>Id:</label>
-                                <input className="form-control" readOnly type="text" />
-                            </FormGroup> */}
-
-                            <FormGroup>
-                                <label>Nombre:</label>
-                                <input className="form-control" name="nombre" type="text" onChange={this.handleChange}/>
-                            </FormGroup>
-
-                            <FormGroup>
-                                <label>Apellido:</label>
-                                <input className="form-control" name="apellido" type="text" onChange={this.handleChange}/>
-                            </FormGroup>
-
-                        </ModalBody>
-
-                        <ModalFooter>
-                            <Button color="primary" onClick={() => this.insertar()}> Insertar </Button>
-                            <Button className="btn btn-danger" onClick={() => this.cerrarModalInsertar()}>Cancelar</Button>
-                        </ModalFooter>
-                    </Modal>
-                </div>
-            </>
-        )
-    }
+                    <ModalFooter>
+                        <Button color="primary" onClick={() => fInsertar()}> Insertar </Button>
+                        <Button className="btn btn-danger" onClick={() => insertarShowHide()}>Cancelar</Button>
+                    </ModalFooter>
+                </Modal>
+            </div>
+        </>
+    )
 }
+
 export default NuevoRegistro;

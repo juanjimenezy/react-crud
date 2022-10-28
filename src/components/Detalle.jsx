@@ -11,11 +11,11 @@ function Detalle() {
     const [actualizar, setActualizar] = React.useState(false);
     const dispatch = useDispatch();
 
-    const handleDelete = (id) => {
-        var opcion = window.confirm("Estás Seguro que deseas Eliminar el elemento " + id);
+    const handleDelete = (dato) => {
+        var opcion = window.confirm("Estás Seguro que deseas a " + dato.nombre);
         if (opcion === true) {
-            dispatch(deleteRegistro(id));
-            console.log('eliminar' + id);
+            dispatch(deleteRegistro(dato.id));
+            console.log('eliminar' + dato.id);
         }
     };
 
@@ -48,7 +48,7 @@ function Detalle() {
                         <Table>
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    {/* <th>Id</th> */}
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Acciones</th>
@@ -58,12 +58,12 @@ function Detalle() {
                             <tbody>
                                 {registros.map((dato, key) => (
                                     <tr key={key}>
-                                        <td>{dato.id}</td>
+                                        {/* <td>{dato.id}</td> */}
                                         <td>{dato.nombre}</td>
                                         <td>{dato.apellido}</td>
                                         <td><Button color='primary' onClick={() => actualizarShowHide(dato)}>Editar</Button>
                                             {" "}
-                                            <Button color='danger' onClick={() => handleDelete(dato.id)}>Eliminar</Button></td>
+                                            <Button color='danger' onClick={() => handleDelete(dato)}>Eliminar</Button></td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -80,7 +80,7 @@ function Detalle() {
                 <ModalBody>
                     <FormGroup>
                         <label>Id:</label>
-                        <input className="form-control" readOnly type="text" onChange={handleChange} value={registro.id}/>
+                        <input className="form-control" readOnly type="text" value={registro.id}/>
                     </FormGroup>
 
                     <FormGroup>

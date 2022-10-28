@@ -33,5 +33,5 @@ const initialState  = [
 })
 
 
-export const {editRegistro,deleteRegistro} = registrosSlice.actions;
+export const {addRegistro,editRegistro,deleteRegistro} = registrosSlice.actions;
 export default registrosSlice.reducer
