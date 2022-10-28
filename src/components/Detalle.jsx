@@ -36,6 +36,17 @@ function Detalle() {
     };
 
     const editar = () => {
+
+        if(!registro.nombre){
+            window.alert('Campo nombre vacio.')
+            return;
+        }
+
+        if(!registro.apellido){
+            window.alert('Campo apellido vacio.')
+            return;
+        }
+
         dispatch(editRegistro({ ...registro, id: registro.id }));
         setActualizar(!actualizar);
     }
@@ -85,12 +96,12 @@ function Detalle() {
 
                     <FormGroup>
                         <label>Nombre: </label>
-                        <input className="form-control" name="nombre" type="text" onChange={handleChange} value={registro.nombre}/>
+                        <input className="form-control" name="nombre" type="text" onChange={handleChange} value={registro.nombre} required/>
                     </FormGroup>
 
                     <FormGroup>
                         <label>Apellido:</label>
-                        <input className="form-control" name="apellido" type="text" onChange={handleChange} value={registro.apellido}/>
+                        <input className="form-control" name="apellido" type="text" onChange={handleChange} value={registro.apellido} required/>
                     </FormGroup>
                 </ModalBody>
 
