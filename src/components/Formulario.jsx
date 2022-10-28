@@ -7,7 +7,7 @@ import Detalle from "./Detalle";
 export const Formulario = () => {
     return (
         <>
-        <div className="my-5 justify-content-center d-flex align-items-center">
+        <div className="my-4 justify-content-center d-flex align-items-center">
             <Card className="col-md-2">
                 <CardHeader className="text-center">Insertar Registro</CardHeader>
                 <CardBody><NuevoRegistro/></CardBody>
