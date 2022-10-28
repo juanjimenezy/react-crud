@@ -106,7 +106,7 @@ function Detalle() {
                 </ModalBody>
 
                 <ModalFooter>
-                        <Button color="primary" onClick={() => editar()} >Editar</Button>
+                        <Button color="primary" onClick={() => editar()} >Actualizar</Button>
                         <Button color="danger" onClick={() => actualizarShowHide(null)}>Cancelar</Button>
                 </ModalFooter>
             </Modal>

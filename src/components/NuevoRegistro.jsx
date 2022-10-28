@@ -47,7 +47,7 @@ function NuevoRegistro() {
                 <label>Apellido:</label>
                 <input className="form-control" name="apellido" type="text" onChange={handleChange} value={registro.apellido} required />
                 <div className="my-1">
-                    <Button color="primary" onClick={() => fInsertar()}> Insertar </Button>
+                    <Button color="success" onClick={() => fInsertar()}> Insertar </Button>
                 </div>
             </div>
         </Container>
