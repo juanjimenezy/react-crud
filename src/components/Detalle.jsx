@@ -15,7 +15,7 @@ function Detalle() {
         var opcion = window.confirm("Estás Seguro que deseas a " + dato.nombre);
         if (opcion === true) {
             dispatch(deleteRegistro(dato.id));
-            console.log('eliminar' + dato.id);
+            setRegistro({id: "", nombre: "", apellido: ""});
         }
     };
 
