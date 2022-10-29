@@ -41,13 +41,13 @@ function NuevoRegistro() {
         <>
         <Container>
             <div className='text-center'>
-                <label>Nombre:</label>
-                <input className="form-control" name="nombre" type="text" onChange={handleChange} value={registro.nombre} required />
+                {/* <label>Nombre:</label> */}
+                <input className="form-control" name="nombre" type="text" onChange={handleChange} value={registro.nombre} placeholder="Nombre" />
 
-                <label>Apellido:</label>
-                <input className="form-control" name="apellido" type="text" onChange={handleChange} value={registro.apellido} required />
+                {/* <label>Apellido:</label> */}
+                <input className="form-control my-1" name="apellido" type="text" onChange={handleChange} value={registro.apellido} placeholder="Apellido"/>
                 <div className="my-1">
-                    <Button color="success" onClick={() => fInsertar()}> Insertar </Button>
+                    <Button color="success" onClick={() => fInsertar()}><i class="bi bi-person-plus"></i></Button>
                 </div>
             </div>
         </Container>

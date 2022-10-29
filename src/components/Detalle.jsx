@@ -72,9 +72,9 @@ function Detalle() {
                                         {/* <td>{dato.id}</td> */}
                                         <td>{dato.nombre}</td>
                                         <td>{dato.apellido}</td>
-                                        <td><Button className="btn-sm" color='secondary' onClick={() => actualizarShowHide(dato)}>Editar</Button>
+                                        <td><Button className="btn-sm" color='secondary' onClick={() => actualizarShowHide(dato)}><i className="bi bi-pencil-square"></i></Button>
                                             {" "}
-                                            <Button className="btn-sm" color='danger' onClick={() => handleDelete(dato)}>Eliminar</Button></td>
+                                            <Button className="btn-sm" color='danger' onClick={() => handleDelete(dato)}><i className="bi bi-trash"></i></Button></td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -106,8 +106,8 @@ function Detalle() {
                 </ModalBody>
 
                 <ModalFooter>
-                        <Button color="primary" onClick={() => editar()} >Actualizar</Button>
-                        <Button color="danger" onClick={() => actualizarShowHide(null)}>Cancelar</Button>
+                        <Button color="success" onClick={() => editar()} ><i className="bi bi-check-lg"></i></Button>
+                        <Button color="danger" onClick={() => actualizarShowHide(null)}><i class="bi bi-backspace-reverse"></i></Button>
                 </ModalFooter>
             </Modal>
 
