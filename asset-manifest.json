@@ -1,15 +1,16 @@
 {
   "main.css": "/react-crud/static/css/main.22d3c702.chunk.css",
-  "main.js": "/react-crud/static/js/main.33eba07d.chunk.js",
-  "main.js.map": "/react-crud/static/js/main.33eba07d.chunk.js.map",
-  "static/css/1.bd8e2bfd.chunk.css": "/react-crud/static/css/1.bd8e2bfd.chunk.css",
-  "static/js/1.5a3a0009.chunk.js": "/react-crud/static/js/1.5a3a0009.chunk.js",
-  "static/js/1.5a3a0009.chunk.js.map": "/react-crud/static/js/1.5a3a0009.chunk.js.map",
+  "main.js": "/react-crud/static/js/main.81f58450.chunk.js",
+  "main.js.map": "/react-crud/static/js/main.81f58450.chunk.js.map",
+  "static/css/1.4b50c0ff.chunk.css": "/react-crud/static/css/1.4b50c0ff.chunk.css",
+  "static/js/1.138dfd93.chunk.js": "/react-crud/static/js/1.138dfd93.chunk.js",
+  "static/js/1.138dfd93.chunk.js.map": "/react-crud/static/js/1.138dfd93.chunk.js.map",
   "runtime~main.js": "/react-crud/static/js/runtime~main.66e01a89.js",
   "runtime~main.js.map": "/react-crud/static/js/runtime~main.66e01a89.js.map",
+  "static/media/bootstrap-icons.css": "/react-crud/static/media/bootstrap-icons.be6df3f0.woff",
   "static/css/main.22d3c702.chunk.css.map": "/react-crud/static/css/main.22d3c702.chunk.css.map",
-  "static/css/1.bd8e2bfd.chunk.css.map": "/react-crud/static/css/1.bd8e2bfd.chunk.css.map",
+  "static/css/1.4b50c0ff.chunk.css.map": "/react-crud/static/css/1.4b50c0ff.chunk.css.map",
   "index.html": "/react-crud/index.html",
-  "precache-manifest.f3a625c08a70bae8c21aa5e4b9f3005e.js": "/react-crud/precache-manifest.f3a625c08a70bae8c21aa5e4b9f3005e.js",
+  "precache-manifest.bd71855227408279e561478c5467c87e.js": "/react-crud/precache-manifest.bd71855227408279e561478c5467c87e.js",
   "service-worker.js": "/react-crud/service-worker.js"
 }
