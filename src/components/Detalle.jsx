@@ -72,9 +72,9 @@ function Detalle() {
                                         {/* <td>{dato.id}</td> */}
                                         <td>{dato.nombre}</td>
                                         <td>{dato.apellido}</td>
-                                        <td><Button color='secondary' onClick={() => actualizarShowHide(dato)}>Editar</Button>
+                                        <td><Button className="btn-sm" color='secondary' onClick={() => actualizarShowHide(dato)}>Editar</Button>
                                             {" "}
-                                            <Button color='danger' onClick={() => handleDelete(dato)}>Eliminar</Button></td>
+                                            <Button className="btn-sm" color='danger' onClick={() => handleDelete(dato)}>Eliminar</Button></td>
                                     </tr>
                                 ))}
                             </tbody>
