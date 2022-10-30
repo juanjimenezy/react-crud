@@ -37,12 +37,12 @@ function Detalle() {
 
     const editar = () => {
 
-        if(!registro.nombre){
+        if(!registro.nombre.trim()){
             window.alert('Campo nombre vacio.')
             return;
         }
 
-        if(!registro.apellido){
+        if(!registro.apellido.trim()){
             window.alert('Campo apellido vacio.')
             return;
         }

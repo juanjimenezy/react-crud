@@ -22,12 +22,12 @@ function NuevoRegistro() {
         console.log("insertar:");
         console.log(registro.nombre)
 
-        if (!registro.nombre) {
+        if (!registro.nombre.trim()) {
             window.alert('Campo nombre vacio.')
             return;
         }
 
-        if (!registro.apellido) {
+        if (!registro.apellido.trim()) {
             window.alert('Campo apellido vacio.')
             return;
         }
