@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { editRegistro,deleteRegistro } from "../features/registros/registrosSlice";
 
 
+
+
 function Detalle() {
     const registros = useSelector((state) => state.registros);
     const [registro, setRegistro] = React.useState({id: "", nombre: "", apellido: ""});
